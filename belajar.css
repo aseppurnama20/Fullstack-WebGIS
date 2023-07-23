@@ -1,0 +1,72 @@
+p, li {
+    color: purple;
+    font-size: 2rem;
+    font-family: arial;
+}
+
+.belajar-css {
+    color: red;
+}
+
+li.belajar-css {
+    color: orange
+}
+
+.js-mapping {
+    color: red;
+}
+
+.open-source {
+    background-color: greenyellow;
+}
+
+.propetiary {
+    background-color: aqua;
+}
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: greenyellow;
+}
+
+a:hover {
+    color: aqua;
+}
+
+#leaflet {
+    color: aqua !important;
+    font-size: medium;
+}
+
+#openlayers {
+    font-size: large;
+}
+
+#arcgis-js {
+    font-size: smaller;
+}
+
+#google-maps {
+    font-size: xx-large;
+}
+
+.kotak {
+    margin: 10%;
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    transform: rotate(70deg);
+}
+
+@media (min-width: 800px){
+  .kotak {
+    margin: 10%;
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    transform: rotate(70deg);
+  }
+}
