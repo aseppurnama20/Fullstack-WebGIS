@@ -82,3 +82,55 @@ const panitiaAgustusa = [
 ]
 
 // console.log(panitiaAgustusan[0][3])
+
+// OPERATOR
+console.log(5 + 2)
+console.log('Ahmad' + 'Faiz')
+
+console.log('5' + 2)
+console.log(5 + '2')
+
+console.log(10 - 4)
+console.log('Faiz' + 'a')
+
+console.log(5 * 2)
+console.log(5 * '2')
+console.log('5' * 2)
+console.log('Faiz' * 'Geocourse')
+
+console.log(10 / 2)
+
+let laptop = 'Asus'
+console.log(laptop)
+
+laptop = 'HP'
+console.log(laptop)
+
+console.log(laptop == 'HP')
+console.log(laptop == 'Asus')
+
+console.log(laptop === 'HP')
+console.log(laptop === 'Asus')
+
+console.log(laptop !== 'Asus')
+
+// CONDITIONAL
+const kewarganegaraan = 'Indonesia'
+
+if(kewarganegaraan === 'Indonesia'){
+    console.log('Warga Negara Indonesia')
+} else {
+    console.log('Warga Negara Asing')
+}
+
+const kota = 'Semarang'
+
+if(kota === 'Jakarta') {
+    console.log('DKI Jakarta')
+} else if(kota === 'Bandung') {
+    console.log('Jawa Barat')
+} else if(kota === 'Surabaya') {
+    console.log('Jawa Timur')
+} else {
+    console.log('Tidak diketahui')
+}
