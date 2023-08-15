@@ -139,12 +139,6 @@
 // console.log(profileKlubLigaChampions)
 // console.log(profileKlubLigaChampions.manUnited.stadion)
 
-// const panitiaAgustusan = [
-//     ['Andi', 'Warga', 24, true],
-//     ['Budi', 'Warga', 28, true],
-//     ['Putri', 'Warga', 22, false]
-// ]
-
 // console.log(panitiaAgustusan[0][3])
 
 // OPERATOR
@@ -249,4 +243,54 @@
 // };
 
 // LOOP & ITERATION
+// const buah = ['apel', 'jeruk', 'mangga', 'melon', 'durian', 'nangka']
+// console.log(buah)
 
+// console.log(`Saya makan ${buah[0]}`)
+// console.log(`Saya makan ${buah[1]}`)
+// console.log(`Saya makan ${buah[2]}`)
+
+// function makanBuah(urutan){
+//     return console.log(`Saya makan ${buah[urutan]}`)
+// }
+
+// // buah.push('cempedak')
+// // console.log(buah)
+
+// makanBuah(0)
+// makanBuah(1)
+// makanBuah(2)
+
+// let urutan = 0
+// console.log(urutan)
+
+// urutan = urutan + 1
+// urutan++
+// console.log(urutan)
+
+// console.log(buah.length)
+
+// for(let urutan = 0; urutan < buah.length; urutan++){
+//     console.log(`Saya makan ${buah[urutan]}`)
+// }
+
+const panitiaAgustusan = [
+    ['Andi', 'Warga', 24, true],
+    ['Budi', 'Warga', 28, true],
+    ['Putri', 'Warga', 22, false]
+]
+
+console.log(panitiaAgustusan[1][3])
+console.log(panitiaAgustusan[2][3])
+
+let urutan = 0
+while (panitiaAgustusan[urutan][3]){
+    console.log(`Namanya adalah ${panitiaAgustusan[urutan][0]}, statusnya ${panitiaAgustusan[urutan][1]}, umurnya ${panitiaAgustusan[urutan][2]}`)
+    urutan++
+}
+
+angka = [63, 59, 75, 69, 12]
+while(angka[urutan] > 50){
+    console.log(angka[urutan])
+    urutan++
+}
