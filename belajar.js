@@ -240,7 +240,7 @@
 //     } else {
 //         myImage.setAttribute("src")
 //     }
-// };
+// }; 
 
 // LOOP & ITERATION
 // const buah = ['apel', 'jeruk', 'mangga', 'melon', 'durian', 'nangka']
@@ -274,23 +274,50 @@
 //     console.log(`Saya makan ${buah[urutan]}`)
 // }
 
-const panitiaAgustusan = [
-    ['Andi', 'Warga', 24, true],
-    ['Budi', 'Warga', 28, true],
-    ['Putri', 'Warga', 22, false]
-]
+// const panitiaAgustusan = [
+//     ['Andi', 'Warga', 24, true],
+//     ['Budi', 'Warga', 28, true],
+//     ['Putri', 'Warga', 22, false]
+// ]
 
-console.log(panitiaAgustusan[1][3])
-console.log(panitiaAgustusan[2][3])
+// console.log(panitiaAgustusan[1][3])
+// console.log(panitiaAgustusan[2][3])
 
-let urutan = 0
-while (panitiaAgustusan[urutan][3]){
-    console.log(`Namanya adalah ${panitiaAgustusan[urutan][0]}, statusnya ${panitiaAgustusan[urutan][1]}, umurnya ${panitiaAgustusan[urutan][2]}`)
-    urutan++
-}
+// let urutan = 0
+// while (panitiaAgustusan[urutan][3]){
+//     console.log(`Namanya adalah ${panitiaAgustusan[urutan][0]}, statusnya ${panitiaAgustusan[urutan][1]}, umurnya ${panitiaAgustusan[urutan][2]}`)
+//     urutan++
+// }
 
-angka = [63, 59, 75, 69, 12]
-while(angka[urutan] > 50){
-    console.log(angka[urutan])
-    urutan++
-}
+// angka = [63, 59, 75, 69, 12]
+// while(angka[urutan] > 50){
+//     console.log(angka[urutan])
+//     urutan++
+// }
+
+// DOM MANIPULATION
+//console.log(document.head.title) //cannot access title element
+//console.log(document.getElementsByTagName('title'))
+// console.log(document.childElementCount)
+// console.log(document.head.childElementCount)
+// console.log(document.head.children)
+// console.log(document.head.children[2])
+
+// const testingDom = document.head
+// testingDom.push('Hello World')
+// console.log(testingDom)
+
+// let judul1 = document.getElementsByTagName('h1')
+
+// judul1[5].innerHTML = 'Geocourse.id'
+
+// console.log(document.getElementsByTagName('h1')[0].innerHTML)
+
+// const judulUbah = document.getElementsByClassName('ubah')
+// judulUbah[0].innerHTML = 'Geocourse.id'
+// console.log(judulUbah)
+
+const judulItem1 = document.getElementById('item-1')
+judulItem1.innerHTML = 'Geocourse.id'
+console.log(judulItem1)
+
