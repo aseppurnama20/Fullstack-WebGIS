@@ -295,7 +295,7 @@
 //     urutan++
 // }
 
-// DOM MANIPULATION
+// 📖DOM MANIPULATION
 //console.log(document.head.title) //cannot access title element
 //console.log(document.getElementsByTagName('title'))
 // console.log(document.childElementCount)
@@ -307,6 +307,8 @@
 // testingDom.push('Hello World')
 // console.log(testingDom)
 
+// 📖DOM MANIPULATION - Change Innert HTML
+
 // let judul1 = document.getElementsByTagName('h1')
 
 // judul1[5].innerHTML = 'Geocourse.id'
@@ -317,7 +319,21 @@
 // judulUbah[0].innerHTML = 'Geocourse.id'
 // console.log(judulUbah)
 
-const judulItem1 = document.getElementById('item-1')
-judulItem1.innerHTML = 'Geocourse.id'
-console.log(judulItem1)
+// const judulItem1 = document.getElementById('item-1')
+// judulItem1.innerHTML = 'Geocourse.id'
+// console.log(judulItem1)
+
+// const test = document.getElementsByTagName('h1')
+// console.log(test)
+
+//  for(let i = 0; i < test.length;i++) {
+//     test[i].innerHTML = 'Geocourse.id'
+//  }
+
+const judulUbah = document.getElementsByClassName('ubah')
+judulUbah[0].innerHTML = 'Geocourse.id'
+
+ for(let i = 0; i < judulUbah.length; i++) {
+    judulUbah[i].innerHTML = 'WebGIS'
+ }
 
