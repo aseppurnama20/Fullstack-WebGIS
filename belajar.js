@@ -337,3 +337,20 @@ judulUbah[0].innerHTML = 'Geocourse.id'
     judulUbah[i].innerHTML = 'WebGIS'
  }
 
+// 📖 DOM Manipulation - HTML Attribute
+const judul = document.getElementsByTagName('h1')
+judul[6].className = 'testing'
+// judul[6].id = 'item-25'
+judul[6].setAttribute('id', 'item-50')
+judul[6].style.color = 'green'
+judul[6].style.fontFamily = 'arial'
+
+console.log(judul[6])
+
+// 📖 DOM Manipulation - add and delete element
+const paragraf = document.createElement('p')
+paragraf.innerHTML = 'Lorem Ipsum'
+// document.body.appendChild(paragraf)
+judul[6].appendChild(paragraf)
+
+console.log(document.getElementsByTagName('body')[0])
