@@ -330,27 +330,86 @@
 //     test[i].innerHTML = 'Geocourse.id'
 //  }
 
-const judulUbah = document.getElementsByClassName('ubah')
-judulUbah[0].innerHTML = 'Geocourse.id'
+// const judulUbah = document.getElementsByClassName('ubah')
+// judulUbah[0].innerHTML = 'Geocourse.id'
 
- for(let i = 0; i < judulUbah.length; i++) {
-    judulUbah[i].innerHTML = 'WebGIS'
- }
+//  for(let i = 0; i < judulUbah.length; i++) {
+//     judulUbah[i].innerHTML = 'WebGIS'
+//  }
 
-// 📖 DOM Manipulation - HTML Attribute
-const judul = document.getElementsByTagName('h1')
-judul[6].className = 'testing'
-// judul[6].id = 'item-25'
-judul[6].setAttribute('id', 'item-50')
-judul[6].style.color = 'green'
-judul[6].style.fontFamily = 'arial'
+// // 📖 DOM Manipulation - HTML Attribute
+// const judul = document.getElementsByTagName('h1')
+// judul[6].className = 'testing'
+// // judul[6].id = 'item-25'
+// judul[6].setAttribute('id', 'item-50')
+// judul[6].style.color = 'green'
+// judul[6].style.fontFamily = 'arial'
 
-console.log(judul[6])
+// console.log(judul[6])
 
-// 📖 DOM Manipulation - add and delete element
-const paragraf = document.createElement('p')
-paragraf.innerHTML = 'Lorem Ipsum'
-// document.body.appendChild(paragraf)
-judul[6].appendChild(paragraf)
+// // 📖 DOM Manipulation - add and delete element
+// const divisi = document.createElement('div')
+// const judul1 = document.createElement('h1')
+// judul1.innerHTML = 'WebGIS'
+// judul1.style.color = 'red'
+// const judul2 = document.createElement('h2')
+// judul2.innerHTML = 'JavaScript'
+// const paragraf = document.createElement('p')
+// paragraf.innerHTML = 'Lorem Ipsum'
+// document.body.appendChild(divisi)
+// divisi.appendChild(judul1)
+// divisi.appendChild(paragraf)
 
-console.log(document.getElementsByTagName('body')[0])
+// divisi.removeChild(judul1)
+// divisi.replaceChild(judul2, judul1)
+
+// console.log(document.getElementsByTagName('body')[0])
+
+// 📖 DOM Manipulation - Event Handler
+const divisi = document.createElement('div')
+document.body.appendChild(divisi)
+
+const tombol = document.createElement('button')
+tombol.innerHTML = 'Klik di sini'
+divisi.appendChild(tombol)
+
+tombol.onclick = function(){
+   const judul = document.getElementsByTagName('h1')[0]
+   if(judul.innerHTML === 'Hello World'){
+      return judul.innerHTML = 'Geocourse.id'
+   } else{
+      return judul.innerHTML = 'Hello World'
+   }
+}
+
+// Case Increament Decreament
+const divisi2 = document.createElement('div')
+document.body.appendChild(divisi2)
+
+let angka = 0
+
+const angkaHTML = document.createElement('h1')
+angkaHTML.innerHTML = angka
+divisi2.appendChild(angkaHTML)
+
+const tombolTambah = document.createElement('button')
+tombolTambah.innerHTML = 'Naik'
+tombolTambah.style.backgroundColor = 'green'
+tombolTambah.style.color = 'white'
+divisi2.appendChild(tombolTambah)
+
+const tombolKurang = document.createElement('button')
+tombolKurang.innerHTML = 'Turun'
+tombolKurang.style.backgroundColor = 'red'
+tombolKurang.style.color = 'white'
+divisi2.appendChild(tombolKurang)
+
+tombolTambah.onclick = function(){
+   angka++
+   return angkaHTML.innerHTML = angka
+}
+
+tombolKurang.onclick = function(){
+   angka--
+   return angkaHTML.innerHTML = angka
+}
