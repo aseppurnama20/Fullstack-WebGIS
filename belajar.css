@@ -1,67 +1,67 @@
-p, li {
+/* /* p, li {
     color: purple;
     font-size: 1rem;
     font-family: arial;
-}
+} */
 
-.belajar-css {
+/* .belajar-css {
     color: red;
-}
+} */
 
-li.belajar-css {
+/* li.belajar-css {
     color: orange
-}
+} */
 
-.js-mapping {
+/* .js-mapping {
     color: red;
-}
+} */
 
-.open-source {
+/* .open-source {
     background-color: greenyellow;
-}
+} */
 
-.propetiary {
+/* .propetiary {
     background-color: aqua;
-}
+} */
 
-a:link {
+/* a:link {
     color: pink;
-}
+} */
 
-a:visited {
+/* a:visited {
     color: greenyellow;
-}
+} */
 
-a:hover {
+/* a:hover {
     color: aqua;
-}
+} */
 
-#leaflet {
+/* #leaflet {
     color: aqua !important;
     font-size: medium;
-}
+} */
 
-#openlayers {
+/* #openlayers {
     font-size: large;
-}
+} */
 
-#arcgis-js {
+/* #arcgis-js {
     font-size: smaller;
-}
+} */
 
-#google-maps {
+/* #google-maps {
     font-size: xx-large;
-}
+} */
 
-.kotak {
+/* .kotak {
     margin: 10%;
     width: 100px;
     height: 100px;
     background-color: greenyellow;
     transform: rotate(70deg);
-}
+} */
 
-@media (min-width: 800px){
+/* @media (min-width: 800px){
   .kotak {
     margin: 10%;
     width: 100px;
@@ -69,4 +69,4 @@ a:hover {
     background-color: skyblue;
     transform: rotate(70deg);
   }
-}
+} */

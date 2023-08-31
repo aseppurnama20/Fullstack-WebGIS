@@ -365,51 +365,68 @@
 
 // console.log(document.getElementsByTagName('body')[0])
 
-// 📖 DOM Manipulation - Event Handler
-const divisi = document.createElement('div')
-document.body.appendChild(divisi)
+// // 📖 DOM Manipulation - Event Handler
+// const divisi = document.createElement('div')
+// document.body.appendChild(divisi)
 
-const tombol = document.createElement('button')
-tombol.innerHTML = 'Klik di sini'
-divisi.appendChild(tombol)
+// const tombol = document.createElement('button')
+// tombol.innerHTML = 'Klik di sini'
+// divisi.appendChild(tombol)
 
-tombol.onclick = function(){
-   const judul = document.getElementsByTagName('h1')[0]
-   if(judul.innerHTML === 'Hello World'){
-      return judul.innerHTML = 'Geocourse.id'
-   } else{
-      return judul.innerHTML = 'Hello World'
-   }
-}
+// tombol.onclick = function(){
+//    const judul = document.getElementsByTagName('h1')[0]
+//    if(judul.innerHTML === 'Hello World'){
+//       return judul.innerHTML = 'Geocourse.id'
+//    } else{
+//       return judul.innerHTML = 'Hello World'
+//    }
+// }
 
-// Case Increament Decreament
-const divisi2 = document.createElement('div')
-document.body.appendChild(divisi2)
+// // Case Increament Decreament
+// const divisi2 = document.createElement('div')
+// document.body.appendChild(divisi2)
 
-let angka = 0
+// let angka = 0
 
-const angkaHTML = document.createElement('h1')
-angkaHTML.innerHTML = angka
-divisi2.appendChild(angkaHTML)
+// const angkaHTML = document.createElement('h1')
+// angkaHTML.innerHTML = angka
+// divisi2.appendChild(angkaHTML)
 
-const tombolTambah = document.createElement('button')
-tombolTambah.innerHTML = 'Naik'
-tombolTambah.style.backgroundColor = 'green'
-tombolTambah.style.color = 'white'
-divisi2.appendChild(tombolTambah)
+// const tombolTambah = document.createElement('button')
+// tombolTambah.innerHTML = 'Naik'
+// tombolTambah.style.backgroundColor = 'green'
+// tombolTambah.style.color = 'white'
+// divisi2.appendChild(tombolTambah)
 
-const tombolKurang = document.createElement('button')
-tombolKurang.innerHTML = 'Turun'
-tombolKurang.style.backgroundColor = 'red'
-tombolKurang.style.color = 'white'
-divisi2.appendChild(tombolKurang)
+// const tombolKurang = document.createElement('button')
+// tombolKurang.innerHTML = 'Turun'
+// tombolKurang.style.backgroundColor = 'red'
+// tombolKurang.style.color = 'white'
+// divisi2.appendChild(tombolKurang)
 
-tombolTambah.onclick = function(){
-   angka++
-   return angkaHTML.innerHTML = angka
-}
+// tombolTambah.onmousemove = function(){
+//    angka++
+//    return angkaHTML.innerHTML = angka
+// }
 
-tombolKurang.onclick = function(){
-   angka--
-   return angkaHTML.innerHTML = angka
-}
+// tombolKurang.onmousemove = function(){
+//    angka--
+//    return angkaHTML.innerHTML = angka
+// }
+
+// 📖 DOM Manipulation - Query
+// const element = document.getElementsByTagName('h1')
+// console.log(element)
+
+// const element2 = document.getElementsByClassName('ubah')
+// console.log(element2)
+
+// const query = document.querySelectorAll('h1.ubah')
+// console.log(query)
+
+// query.forEach(function(){
+//    console.log(this)
+// })
+
+const query = document.querySelectorAll('div.primer > h2[biru]')
+console.log(query)
