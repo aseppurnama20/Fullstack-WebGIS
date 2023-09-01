@@ -428,5 +428,70 @@
 //    console.log(this)
 // })
 
-const query = document.querySelectorAll('div.primer > h2[biru]')
-console.log(query)
+// const query = document.querySelectorAll('div.primer > h2[data="valid"]')
+// console.log(query)
+
+// 📖 DOM Manipulation - CASE: Change image by number
+// CASE:
+// 1. Twitter
+// 2. Instagram
+// 3. Tiktok
+// 4. Linkedin
+// 5. Facebook
+
+const divisi = document.createElement('div')
+document.body.appendChild(divisi)
+
+const gambar = document.createElement('img')
+gambar.src = 'https://ww1.freelogovectors.net/wp-content/uploads/2023/07/twitter-x-logo-freelogovectors.net_.png'
+gambar.height = '100'
+divisi.appendChild(gambar)
+
+let angka = 1
+const teks = document.createElement('h3')
+teks.innerHTML = `Peringkat: ${angka}`
+divisi.appendChild(teks)
+
+const tombolNaik = document.createElement('button')
+tombolNaik.innerHTML = 'Naik'
+tombolNaik.style.backgroundColor = 'green'
+tombolNaik.style.color = 'white'
+divisi.appendChild(tombolNaik)
+
+tombolNaik.onclick = function(){
+    angka++
+    if(angka === 1){
+        gambar.src = 'https://ww1.freelogovectors.net/wp-content/uploads/2023/07/twitter-x-logo-freelogovectors.net_.png'   
+    } else if(angka === 2){
+       gambar.src = 'https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-instagram-social-media-icon-png-image_6618438.png' 
+    } else if(angka === 3){
+        gambar.src = 'https://w7.pngwing.com/pngs/829/574/png-transparent-tiktok-hd-logo-thumbnail.png'
+    } else if(angka === 4){
+        gambar.src = 'https://image.similarpng.com/thumbnail/2020/07/Linkedin-logo-on-transparent-Background-PNG-.png'
+    } else if(angka === 5){
+        gambar.src = 'https://w7.pngwing.com/pngs/991/568/png-transparent-facebook-logo-computer-icons-facebook-logo-facebook-thumbnail.png'
+    }
+    return teks.innerHTML = `Peringkat: ${angka}`
+}
+
+const tombolTurun = document.createElement('button')
+tombolTurun.innerHTML = 'Turun'
+tombolTurun.style.backgroundColor = 'red'
+tombolTurun.style.color = 'white'
+divisi.appendChild(tombolTurun)
+
+tombolTurun.onclick = function(){
+    angka--
+    if(angka === 1){
+        gambar.src = 'https://ww1.freelogovectors.net/wp-content/uploads/2023/07/twitter-x-logo-freelogovectors.net_.png'   
+    } else if(angka === 2){
+       gambar.src = 'https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-instagram-social-media-icon-png-image_6618438.png' 
+    } else if(angka === 3){
+        gambar.src = 'https://w7.pngwing.com/pngs/829/574/png-transparent-tiktok-hd-logo-thumbnail.png'
+    } else if(angka === 4){
+        gambar.src = 'https://image.similarpng.com/thumbnail/2020/07/Linkedin-logo-on-transparent-Background-PNG-.png'
+    } else if(angka === 5){
+        gambar.src = 'https://w7.pngwing.com/pngs/991/568/png-transparent-facebook-logo-computer-icons-facebook-logo-facebook-thumbnail.png'
+    }
+    return teks.innerHTML = `Peringkat: ${angka}`
+}
