@@ -560,78 +560,173 @@
 // console.error('terjadi kesalahan kode')
 
 // 📖 WebAPI JavaScript - VALIDATION
+// const divisi = document.createElement('div')
+// document.body.appendChild(divisi)
+
+// const judul = document.createElement('h1')
+// judul.innerHTML = 'Ujicoba Validasi'
+// divisi.appendChild(judul)
+
+// const label = document.createElement('p')
+// label.innerHTML = 'Masukkan nilai lintang'
+// divisi.appendChild(label)
+
+// const pilihan = document.createElement('select')
+// pilihan.name = 'poros-koordinat'
+// pilihan.id = 'poros-koordinat'
+// divisi.appendChild(pilihan)
+
+// const defaultValue = document.createElement('option')
+// defaultValue.value = '-- Pilih kategori'
+// defaultValue.innerHTML = '-- Pilih kategori'
+// defaultValue.defaultSelected = true
+// pilihan.appendChild(defaultValue)
+
+// const lintang = document.createElement('option')
+// lintang.value = 'Lintang'
+// lintang.innerHTML = 'Lintang'
+// pilihan.appendChild(lintang)
+
+// const bujur = document.createElement('option')
+// bujur.value = 'Bujur'
+// bujur.innerHTML = 'Bujur'
+// pilihan.appendChild(bujur)
+
+// const inputData = document.createElement('input')
+// inputData.type = 'number'
+// divisi.appendChild(inputData)
+
+// const tombolSubmit = document.createElement('button')
+// tombolSubmit.type = 'submit'
+// tombolSubmit.innerHTML = 'Kirim'
+// divisi.appendChild(tombolSubmit)
+
+// const pesanError = document.createElement('p')
+// // pesanError.innerHTML = 'Hello World'
+// divisi.appendChild(pesanError)
+
+// console.log(document.querySelector('select > option[selected'))
+
+
+// function validasi(){
+//     // LOGIC
+//     // Lintang = min(-90), max(90)
+//     // Bujur = min(-180), max(180)
+
+//   pilihan.onchange = function(){
+//     const opsi = this.value
+//     if(opsi === 'Lintang'){
+//         inputData.min = 0
+//         inputData.max = 90
+//     } else {
+//         inputData.min = 0
+//         inputData.max = 180 
+//     }
+        
+//     if(inputData.checkValidity() && opsi == 'Lintang'){
+//         return pesanError.innerHTML = `Data Valid, dipilih lintang`
+//     } else if(inputData.checkValidity() && opsi == 'Bujur'){
+//         return pesanError.innerHTML = `Data valid, dipilih bujur`
+//     } else {
+//         return pesanError.innerHTML = `Data tidak valid`
+//     }
+//   }
+// }
+
+// tombolSubmit.onclick = () => validasi()
+
+// 📖 WebAPI - Fetch
+// const divisi = document.createElement('div')
+// document.body.appendChild(divisi)
+
+// const judul = document.createElement('h1')
+// judul.innerHTML = 'Ujicoba Fetch'
+// divisi.appendChild(judul)
+
+// const foto = document.createElement('img')
+// foto.height = 150
+// divisi.appendChild(foto)
+
+// const lintang = document.createElement('p')
+// lintang.innerHTML = 'Hello World'
+// divisi.appendChild(lintang)
+
+// const tombolBack = document.createElement('button')
+// tombolBack.innerHTML = 'Back'
+// divisi.appendChild(tombolBack)
+
+// const tombolNext = document.createElement('button')
+// tombolNext.innerHTML = 'Next'
+// divisi.appendChild(tombolNext)
+
+// let urutan = 10;
+
+// fetch(`https://jsonplaceholder.typicode.com/photos/${urutan}`)
+// .then(response => response.json())
+// .then(function(json){
+//   lintang.innerHTML = json.title
+// })
+
+// tombolBack.onclick = function(){
+//     urutan--
+//     console.log(urutan)
+//     fetch(`https://jsonplaceholder.typicode.com/photos/${urutan}`)
+//       .then(response => response.json())
+//       .then(function(json){
+//         lintang.innerHTML = json.title
+//         foto.src = json.thumbnailUrl
+//       })
+// }
+
+// tombolNext.onclick = function(){
+//     urutan++
+//     console.log(urutan)
+//     fetch(`https://jsonplaceholder.typicode.com/photos/${urutan}`)
+//       .then(response => response.json())
+//       .then(function(json){
+//         lintang.innerHTML = json.title
+//         foto.src = json.thumbnailUrl
+//       })
+// }
+
+// 📖 WebAPI - Geolocation
 const divisi = document.createElement('div')
 document.body.appendChild(divisi)
 
 const judul = document.createElement('h1')
-judul.innerHTML = 'Ujicoba Validasi'
+judul.innerHTML = 'Ujicoba Geolokasi'
 divisi.appendChild(judul)
 
-const label = document.createElement('p')
-label.innerHTML = 'Masukkan nilai lintang'
-divisi.appendChild(label)
+const lintang = document.createElement('p')
+lintang.innerHTML = 'Hello World'
+divisi.appendChild(lintang)
 
-const pilihan = document.createElement('select')
-pilihan.name = 'poros-koordinat'
-pilihan.id = 'poros-koordinat'
-divisi.appendChild(pilihan)
+const bujur = document.createElement('p')
+bujur.innerHTML = 'Hello World'
+divisi.appendChild(bujur)
 
-const defaultValue = document.createElement('option')
-defaultValue.value = '-- Pilih kategori'
-defaultValue.innerHTML = '-- Pilih kategori'
-defaultValue.defaultSelected = true
-pilihan.appendChild(defaultValue)
+const Timestamp = document.createElement('p')
+Timestamp.innerHTML = 'Hello World'
+divisi.appendChild(Timestamp)
 
-const lintang = document.createElement('option')
-lintang.value = 'Lintang'
-lintang.innerHTML = 'Lintang'
-pilihan.appendChild(lintang)
+const tombol = document.createElement('button')
+tombol.innerHTML = 'Tampilkan Koordinat'
+divisi.appendChild(tombol)
 
-const bujur = document.createElement('option')
-bujur.value = 'Bujur'
-bujur.innerHTML = 'Bujur'
-pilihan.appendChild(bujur)
+tombol.onclick = function() {
+  return getLocation()
+}
 
-const inputData = document.createElement('input')
-inputData.type = 'number'
-divisi.appendChild(inputData)
-
-const tombolSubmit = document.createElement('button')
-tombolSubmit.type = 'submit'
-tombolSubmit.innerHTML = 'Kirim'
-divisi.appendChild(tombolSubmit)
-
-const pesanError = document.createElement('p')
-// pesanError.innerHTML = 'Hello World'
-divisi.appendChild(pesanError)
-
-console.log(document.querySelector('select > option[selected'))
-
-
-function validasi(){
-    // LOGIC
-    // Lintang = min(-90), max(90)
-    // Bujur = min(-180), max(180)
-
-    pilihan.onchange = function(){
-        const opsi = this.value
-        if(opsi === 'Lintang'){
-            inputData.min = 0
-            inputData.max = 90
-        } else {
-            inputData.min = 0
-            inputData.max = 180 
-        }
-        
-        if(inputData.checkValidity() && opsi == 'Lintang'){
-            return pesanError.innerHTML = `Data Valid, dipilih lintang`
-        } else if(inputData.checkValidity() && opsi == 'Bujur'){
-            return pesanError.innerHTML = `Data valid, dipilih bujur`
-        } else {
-            return pesanError.innerHTML = `Data tidak valid`
-        }
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        lintang.innerHTML = 'Geolocation is not supported by this browser.'
     }
 }
 
-tombolSubmit.onclick = () => validasi()
-
+function showPosition(position) {
+    lintang.innerHTML = position.coords.latitude
+    bujur.innerHTML = position.coords.longitude
+    Timestamp.innerHTML = position.timestamp
+}
