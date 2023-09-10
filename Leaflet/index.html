@@ -8,30 +8,19 @@
     <link rel="stylesheet" href="./leaflet/leaflet.css">
     <script src="./leaflet/leaflet.js"></script>
 
-    <style>
-        #peta {
-            height: 400px;
-        }
-    </style>
+    <!-- CUSTOME CSS -->
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
     <h1>Hello World</h1>
     <p>Ujicoba membuat WebGIS menggunakan Leaflet</p>
+
+    <!-- Tampilan Peta -->
     <div id="peta"></div>
 
-    <script>
-        const peta = L.map('peta')
-        peta.setView([0, 110], 4);
+    <!-- CUSTOM JS -->
+    <script src="./main.js"></script>
 
-        const atribusiOSM = {
-            attribution: '<a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
-        };
-
-        const basemapOSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', atribusiOSM)
-        basemapOSM.addTo(peta)
-
-        // const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/tiles/natural_earth_cross_blended_hypso_shaded_relief.raster/{z}/{x}/{y}.png')
-        // basemapNaturalEarth.addTo(peta)
-    </script>
 </body>
 </html>
