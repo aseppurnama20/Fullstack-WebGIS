@@ -18,6 +18,17 @@ const optionTitik = {
 const titik = L.marker([-6.2056, 106.8297], optionTitik)
 titik.addTo(peta);
 
+const popupTitik = `
+  <h1>Jakarta</h1>
+  <a target='_blank' href="https://www.jakarta.go.id/">
+    <img height="100" src='https://www.jakarta.go.id/uploads/contents/content--20230330031636.png'>
+  </a>
+  `
+
+
+
+titik.bindPopup(popupTitik)
+
 const optionLingkaran = {
     radius: 100000,
     opacity: 0.5
@@ -92,4 +103,45 @@ const koordinatMultiPolygon = [
 ]
 
 const multiPolygon = L.polygon(koordinatMultiPolygon)
-multiPolygon.addTo(peta)
+// multiPolygon.addTo(peta)
+
+const eventClick = function(e) {
+    const koordinat = e.latlng
+    const y = koordinat.lat
+    const x = koordinat.lng
+
+    const titikEvent = L.marker([y, x])
+    return titikEvent.addTo(peta);
+}
+
+// peta.on('click', eventClick)
+
+let koordinatEventPolygon = []
+
+const eventClickPolygon = function(e) {
+    const koordinat = e.latlng
+    const y = koordinat.lat
+    const x = koordinat.lng
+    
+    koordinatEventPolygon.push([y,x])
+    
+    eventPolygon = L.polygon(koordinatEventPolygon)
+}
+
+peta.on('click', eventClickPolygon)
+
+const buttonSubmit = document.createElement('button')
+buttonSubmit.innerHTML = 'SUBMIT'
+document.body.appendChild(buttonSubmit)
+
+buttonSubmit.onclick = function() {
+    return eventPolygon.addTo(peta)
+}
+
+const buttonReset = document.createElement('button')
+buttonReset.innerHTML = 'RESET'
+document.body.appendChild(buttonReset)
+
+buttonReset.onclick = function() {
+    return koordinatEventPolygon = []
+}
