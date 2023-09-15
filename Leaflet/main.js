@@ -146,14 +146,40 @@ const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/t
 //     return koordinatEventPolygon = []
 // }
 
-function getKoordinat(e) {
-    console.log(e.latlng)
-}
+// 📖 Styling Feature
+// function getKoordinat(e) {
+//     console.log(e.latlng)
+// }
 
-peta.on('click', getKoordinat)
+// peta.on('click', getKoordinat)
+
+const iconMerah = L.icon({
+    iconUrl: './asset/image/point1.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 30],
+    shadowUrl: './leaflet/images/marker-shadow.png',
+    shadowSize: [50, 50],
+    shadowAnchor: [17, 46]
+})
+
+const iconBiru = L.icon({
+    iconUrl: './asset/image/point2.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 30],
+    shadowUrl: './leaflet/images/marker-shadow.png',
+    shadowSize: [50, 50],
+    shadowAnchor: [17, 46]
+})
 
 const jakarta = L.marker([-6.2056, 106.8297])
 jakarta.addTo(peta)
 
-const medan = L.marker({lat: 3.5300750134163437, lng: 98.65754558067957})
+const medan = L.marker({lat: 3.5300750134163437, lng: 98.65754558067957}, {
+    icon: iconMerah
+})
 medan.addTo(peta)
+
+const makassar = L.marker({lat: -5.153760690296487, lng: 119.42156009819541}, {
+    icon: iconBiru
+})
+makassar.addTo(peta)
