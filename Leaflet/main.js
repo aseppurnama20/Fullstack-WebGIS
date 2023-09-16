@@ -153,33 +153,144 @@ const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/t
 
 // peta.on('click', getKoordinat)
 
-const iconMerah = L.icon({
-    iconUrl: './asset/image/point1.png',
-    iconSize: [40, 40],
-    iconAnchor: [20, 30],
-    shadowUrl: './leaflet/images/marker-shadow.png',
-    shadowSize: [50, 50],
-    shadowAnchor: [17, 46]
-})
+// const iconMerah = L.icon({
+//     iconUrl: './asset/image/point1.png',
+//     iconSize: [40, 40],
+//     iconAnchor: [20, 30],
+//     shadowUrl: './leaflet/images/marker-shadow.png',
+//     shadowSize: [50, 50],
+//     shadowAnchor: [17, 46]
+// })
 
-const iconBiru = L.icon({
-    iconUrl: './asset/image/point2.png',
-    iconSize: [40, 40],
-    iconAnchor: [20, 30],
-    shadowUrl: './leaflet/images/marker-shadow.png',
-    shadowSize: [50, 50],
-    shadowAnchor: [17, 46]
-})
+// const iconBiru = L.icon({
+//     iconUrl: './asset/image/point2.png',
+//     iconSize: [40, 40],
+//     iconAnchor: [20, 30],
+//     shadowUrl: './leaflet/images/marker-shadow.png',
+//     shadowSize: [50, 50],
+//     shadowAnchor: [17, 46]
+// })
 
-const jakarta = L.marker([-6.2056, 106.8297])
-jakarta.addTo(peta)
+// const jakarta = L.marker([-6.2056, 106.8297])
+// jakarta.addTo(peta)
 
-const medan = L.marker({lat: 3.5300750134163437, lng: 98.65754558067957}, {
-    icon: iconMerah
-})
-medan.addTo(peta)
+// const medan = L.marker({lat: 3.5300750134163437, lng: 98.65754558067957}, {
+//     icon: iconMerah
+// })
+// medan.addTo(peta)
+// medan.bindPopup('Medan')
 
-const makassar = L.marker({lat: -5.153760690296487, lng: 119.42156009819541}, {
-    icon: iconBiru
-})
-makassar.addTo(peta)
+// const makassar = L.marker({lat: -5.153760690296487, lng: 119.42156009819541}, {
+//     icon: iconBiru
+// })
+// makassar.addTo(peta)
+// makassar.bindPopup('Makassar')
+
+// const koordinatWilayah = [
+//     [
+//         [0.3883637923855354, 112.37406410737786],
+//         [-0.5344770444698392, 115.80398992761823],
+//         [-2.906284582445359, 115.49617607195563],
+//         [-2.3355955006201783, 111.5825427642455]
+//     ],
+//     [
+//         [-0.8860119821185297, 113.47339930617287],
+//         [-0.9738910219712407, 114.52876109701604],
+//         [-1.5450396994250115, 113.25353226641388]
+//     ]
+// ]
+
+// const optionWilayah = {
+//     color: 'green',
+//     stroke: false,
+//     weight: 5,
+//     opacity: 0.5,
+//     dashArray: 20,
+//     dashOffset: 10,
+//     lineCap: 'square',
+//     fill: true,
+//     fillColor: 'blue',
+//     fillOpacity: 0.4,
+//     fillRule: 'evenodd'
+// }
+
+// let wilayah = L.polygon(koordinatWilayah, optionWilayah)
+// wilayah.addTo(peta)
+// // wilayah.bindPopup('Hutan Hujan Tropis')
+
+// const tampilGaris = document.createElement('button')
+// tampilGaris.innerHTML = 'Tombol Garis'
+// document.body.appendChild(tampilGaris)
+
+// tampilGaris.onclick = function() {
+//   const ubahGaris = function(kondisi) {
+//     peta.removeLayer(wilayah)
+//     const x = optionWilayah.stroke = kondisi
+//     // console.log(x)
+//     wilayah = L.polygon(koordinatWilayah, optionWilayah)
+//     wilayah.addTo(peta)
+//   }
+
+//   if(optionWilayah.stroke === false){
+//     ubahGaris(true)
+//   } else {
+//     ubahGaris(false)
+//   }
+// }
+
+// const tambahUkuran = document.createElement('button')
+// tambahUkuran.innerHTML = 'Tambah Ukuran Garis'
+// document.body.appendChild(tambahUkuran)
+
+// tambahUkuran.onclick = function() {
+//     peta.removeLayer(wilayah)
+//     const x = optionWilayah.weight += 1
+//     wilayah = L.polygon(koordinatWilayah, optionWilayah)
+//     wilayah.addTo(peta)
+// }
+
+// const kurangUkuran = document.createElement('button')
+// kurangUkuran.innerHTML = 'Kurang Ukuran Garis'
+// document.body.appendChild(kurangUkuran)
+
+// kurangUkuran.onclick = function() {
+//     peta.removeLayer(wilayah)
+//     const x = optionWilayah.weight -= 1
+//     wilayah = L.polygon(koordinatWilayah, optionWilayah)
+//     wilayah.addTo(peta)
+// }
+
+// 📖 GeoJSON
+// function getKoordinat(e) {
+//     console.log(e.latlng)
+// }
+
+// peta.on('click', getKoordinat)
+
+// const data = {
+//     type: 'Feature',
+//     geometry: {
+//         type: 'Point',
+//         coordinates: [110.41362314024069, -7.069957050653489]
+//     },
+//     properties: {
+//         nama: 'Semarang',
+//         status: 'Kota'
+//     }
+// }
+
+fetch('./asset/data/kota.geojson')
+  .then(response => response.json())
+  .then(function(json){
+    const dataGeoJson = L.geoJSON(json, {
+        onEachFeature: function(feature, layer){
+            layer.bindPopup(feature.properties.nama)
+        }
+    })
+    dataGeoJson.addTo(peta)
+    // dataGeoJson.bindPopup('Jakarta')
+    // console.log(json)
+  })
+
+// const dataGeoJSON = L.geoJSON(data)
+// dataGeoJSON.addTo(peta)

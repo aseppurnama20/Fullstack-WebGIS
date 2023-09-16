@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "kota",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nama": "Jakarta", "status": "Ibukota Negara" }, "geometry": { "type": "Point", "coordinates": [ 106.837011003087511, -6.156115997343798 ] } },
+{ "type": "Feature", "properties": { "nama": "Jambi", "status": "Provinsi" }, "geometry": { "type": "Point", "coordinates": [ 103.589018311972183, -1.5991516346207 ] } },
+{ "type": "Feature", "properties": { "nama": "Pontianak", "status": "Ibukota Provinsi" }, "geometry": { "type": "Point", "coordinates": [ 109.352878075778364, -0.008260048280466 ] } }
+]
+}
