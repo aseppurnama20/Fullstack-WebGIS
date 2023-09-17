@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "penerbangan",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "jalur": "jalur1", "status": true }, "geometry": { "type": "LineString", "coordinates": [ [ 103.586700041338773, -1.605234524804409 ], [ 106.858063727956306, -6.154474651506911 ] ] } }
+]
+}

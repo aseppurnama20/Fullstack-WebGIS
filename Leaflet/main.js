@@ -1,15 +1,19 @@
 const peta = L.map('peta')
-peta.setView([0, 110], 5);
+peta.setView([0, 110], 7);
 
 const atribusiOSM = {
     attribution: '<a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a>'
 };
 
+const atribusiNE = {
+  attribution: '<a href="http://www.opendatacommons.org/licenses/pddl/1.0/." target="_blank">Natural Earth</a>'
+};
+
 const basemapOSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', atribusiOSM)
 basemapOSM.addTo(peta)
 
-const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/tiles/natural_earth_cross_blended_hypso_shaded_relief.raster/{z}/{x}/{y}.png')
-// basemapNaturalEarth.addTo(peta)
+const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/tiles/natural_earth_cross_blended_hypso_shaded_relief.raster/{z}/{x}/{y}.png', atribusiNE)
+basemapNaturalEarth.addTo(peta)
 
 // const optionTitik = {
 //     opacity: 0.7
@@ -279,18 +283,101 @@ const basemapNaturalEarth = L.tileLayer('https://naturalearthtiles.roblabs.com/t
 //     }
 // }
 
-fetch('./asset/data/kota.geojson')
-  .then(response => response.json())
-  .then(function(json){
-    const dataGeoJson = L.geoJSON(json, {
-        onEachFeature: function(feature, layer){
-            layer.bindPopup(feature.properties.nama)
-        }
-    })
-    dataGeoJson.addTo(peta)
-    // dataGeoJson.bindPopup('Jakarta')
-    // console.log(json)
-  })
-
 // const dataGeoJSON = L.geoJSON(data)
 // dataGeoJSON.addTo(peta)
+
+const settingIcon = function(url) {
+  const icon = L.icon({
+    iconUrl: url,
+    iconSize: [40, 40],
+    iconAnchor: [20, 30],
+    shadowUrl: './leaflet/images/marker-shadow.png',
+    shadowSize: [50, 50],
+    shadowAnchor: [17, 46]
+  })
+  return icon
+}
+
+const iconMerah = settingIcon('./asset/image/point1.png')
+const iconBiru = settingIcon('./asset/image/point2.png')
+const iconKuning = settingIcon('./asset/image/point3.png')
+
+// fetch('./asset/data/kota.geojson')
+//   .then(response => response.json())
+//   .then(function(json){
+//     const dataGeoJson = L.geoJSON(json, {
+//         onEachFeature: function(feature, layer){ 
+//           layer.bindPopup(feature.properties.nama)
+
+//           const status = feature.properties.status
+//           if (status === 'Ibukota Negara') {
+//             layer.setIcon(iconMerah)
+//           } else if (status === 'Ibukota Provinsi') {
+//             layer.setIcon(iconBiru)
+//           } else if (status === 'Provinsi') {
+//             layer.setIcon(iconKuning)
+//           }
+//         }
+//     })
+//     dataGeoJson.addTo(peta)
+//   })
+
+  const kota = L.geoJson.ajax("./asset/data/kota.geojson", {
+    onEachFeature: function(feature, layer){ 
+      layer.bindPopup(feature.properties.nama)
+
+      const status = feature.properties.status
+      if (status === 'Ibukota Negara') {
+        layer.setIcon(iconMerah)
+      } else if (status === 'Ibukota Provinsi') {
+        layer.setIcon(iconBiru)
+      } else if (status === 'Provinsi') {
+        layer.setIcon(iconKuning)
+      }
+    }
+  })
+  kota.addTo(peta)
+
+  const gunungJateng = L.geoJson.ajax("http://geoportal.jatengprov.go.id/geoserver/wms?service=WFS&version=1.0.0&request=GetFeature&typeName=ADMIN:tipe_gunung_api_jawa_tengah_pt_330020221101090631&outputFormat=application/json", {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.namaobj)
+    }
+  })
+
+  gunungJateng.addTo(peta)
+
+  const jalurPenerbangan = L.geoJson.ajax("./asset/data/penerbangan.geojson")
+  jalurPenerbangan.addTo(peta)
+
+  const zoomPeta = peta.getZoom()
+  if (zoomPeta < 5) {
+    jalurPenerbangan.addTo(peta)
+  }
+
+  const divisi = document.createElement('div')
+  document.body.appendChild(divisi)
+
+  const imageNegara = document.createElement('img')
+  imageNegara.src = './asset/image/point1.png'
+  divisi.appendChild(imageNegara)
+
+  const labelNegara = document.createElement('span')
+  labelNegara.innerHTML = 'Ibukota Negara'
+  divisi.appendChild(labelNegara)
+
+  // 📖 Layer Control
+const basemap = {
+  "Natural Earth": basemapNaturalEarth,
+  "OpenStreetMap": basemapOSM
+}
+
+const featureLayers = {
+  "Lokasi kota": kota,
+  "Gunung Api Jateng": gunungJateng,
+  "Penerbangan": jalurPenerbangan
+}
+
+const layerControl = L.control.layers(basemap, featureLayers)
+layerControl.addTo(peta)
+
+// console.log(kota)
