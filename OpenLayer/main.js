@@ -9,6 +9,8 @@ import Rotate from './ol/control/Rotate.js';
 import OverviewMap from './ol/control/OverviewMap.js';
 import BingMaps from './ol/source/BingMaps.js';
 import Stamen from './ol/source/Stamen.js';
+import TileDebug from './ol/source/TileDebug.js';
+import {register} from './ol/proj/proj4.js';
 // import {
 //     DragRotateAndZoom,
 //     defaults as 
@@ -55,6 +57,15 @@ const layerOSMInset = new Tile({
     })
 })
 // peta.addLayer(layerOSMInset)
+
+const tileDebug = new Tile({
+    source: new TileDebug()
+})
+peta.addLayer(tileDebug)
+
+proj4.defs('EPSG:4813', '+proj=longlat +ellps=bessel +pm=jakarta +towgs84=-377,681,-50,0,0,0,0 +no_defs')
+
+register(proj4)
 
 const petaView = new View({
     projection:'EPSG:4326',
