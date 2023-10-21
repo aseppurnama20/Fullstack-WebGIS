@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "d668509a-ffe7-4928-95c3-39982778d4be",
+		"name": "Geocourse - GeoServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30510484"
+	},
+	"item": [
+		{
+			"name": "WMS",
+			"item": [
+				{
+					"name": "Get Capabilities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetCapabilities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetCapabilities"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Describe Layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.1.1&request=DescribeLayer&layers=geocourse:negara&output_format=application/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.1.1"
+								},
+								{
+									"key": "request",
+									"value": "DescribeLayer"
+								},
+								{
+									"key": "layers",
+									"value": "geocourse:negara"
+								},
+								{
+									"key": "output_format",
+									"value": "application/json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Map",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetMap&layers=geocourse:negara&styles&crs=EPSG:4326&bbox=90, -11, 140, 6&width=1600&height=600&format=image/PNG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetMap"
+								},
+								{
+									"key": "layers",
+									"value": "geocourse:negara"
+								},
+								{
+									"key": "styles",
+									"value": null
+								},
+								{
+									"key": "crs",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "bbox",
+									"value": "90, -11, 140, 6"
+								},
+								{
+									"key": "width",
+									"value": "1600"
+								},
+								{
+									"key": "height",
+									"value": "600"
+								},
+								{
+									"key": "format",
+									"value": "image/PNG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Map - Airport/PNG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetMap&layers=geocourse:airport&styles&crs=EPSG:4326&bbox=90, -11, 140, 6&width=1600&height=600&format=image/PNG&bgcolor=%2356FFFF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetMap"
+								},
+								{
+									"key": "layers",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "styles",
+									"value": null
+								},
+								{
+									"key": "crs",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "bbox",
+									"value": "90, -11, 140, 6"
+								},
+								{
+									"key": "width",
+									"value": "1600"
+								},
+								{
+									"key": "height",
+									"value": "600"
+								},
+								{
+									"key": "format",
+									"value": "image/PNG"
+								},
+								{
+									"key": "bgcolor",
+									"value": "#56FFFF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Map - Airport/OpenLayers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetMap&layers=geocourse:airport&styles&crs=EPSG:4326&bbox=90, -11, 140, 6&width=1600&height=600&format=application/openlayers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetMap"
+								},
+								{
+									"key": "layers",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "styles",
+									"value": null
+								},
+								{
+									"key": "crs",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "bbox",
+									"value": "90, -11, 140, 6"
+								},
+								{
+									"key": "width",
+									"value": "1600"
+								},
+								{
+									"key": "height",
+									"value": "600"
+								},
+								{
+									"key": "format",
+									"value": "application/openlayers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Map - Airport/KML",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetMap&layers=geocourse:airport&styles&crs=EPSG:4326&bbox=90, -11, 140, 6&width=1600&height=600&format=application/openlayers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetMap"
+								},
+								{
+									"key": "layers",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "styles",
+									"value": null
+								},
+								{
+									"key": "crs",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "bbox",
+									"value": "90, -11, 140, 6"
+								},
+								{
+									"key": "width",
+									"value": "1600"
+								},
+								{
+									"key": "height",
+									"value": "600"
+								},
+								{
+									"key": "format",
+									"value": "application/openlayers"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WFS",
+			"item": [
+				{
+					"name": "Get Feature",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=geocourse:port&outputFormat=application/json&count=1&maxFeatures=5&sortBy=name+D&propertyName=name,geom,website&srsName=EPSG:4326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WFS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "typeNames",
+									"value": "geocourse:port"
+								},
+								{
+									"key": "outputFormat",
+									"value": "application/json"
+								},
+								{
+									"key": "featureID",
+									"value": "1, 2",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "1",
+									"description": "jumlah data duplicate"
+								},
+								{
+									"key": "maxFeatures",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "name+D",
+									"description": "ascending sort (+D for descending)"
+								},
+								{
+									"key": "propertyName",
+									"value": "name,geom,website"
+								},
+								{
+									"key": "srsName",
+									"value": "EPSG:4326"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feature - Airport/json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=geocourse:airport&outputFormat=application/json&count=1&maxFeatures=5&sortBy=name+D&propertyName=name,geom,location&srsName=EPSG:4326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WFS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "typeNames",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "outputFormat",
+									"value": "application/json"
+								},
+								{
+									"key": "featureID",
+									"value": "1, 2",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "1",
+									"description": "jumlah data duplicate"
+								},
+								{
+									"key": "maxFeatures",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "name+D",
+									"description": "ascending sort (+D for descending)"
+								},
+								{
+									"key": "propertyName",
+									"value": "name,geom,location"
+								},
+								{
+									"key": "srsName",
+									"value": "EPSG:4326"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feature - Airport/csv",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=geocourse:airport&outputFormat=csv&srsName=EPSG:4326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WFS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "typeNames",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "outputFormat",
+									"value": "csv"
+								},
+								{
+									"key": "featureID",
+									"value": "1, 2",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "1",
+									"description": "jumlah data duplicate",
+									"disabled": true
+								},
+								{
+									"key": "maxFeatures",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name+D",
+									"description": "ascending sort (+D for descending)",
+									"disabled": true
+								},
+								{
+									"key": "propertyName",
+									"value": "name,geom,website",
+									"disabled": true
+								},
+								{
+									"key": "srsName",
+									"value": "EPSG:4326"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feature - Airport/shapefile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=geocourse:airport&outputFormat=shape-zip&srsName=EPSG:4326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WFS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "typeNames",
+									"value": "geocourse:airport"
+								},
+								{
+									"key": "outputFormat",
+									"value": "shape-zip"
+								},
+								{
+									"key": "featureID",
+									"value": "1, 2",
+									"disabled": true
+								},
+								{
+									"key": "count",
+									"value": "1",
+									"description": "jumlah data duplicate",
+									"disabled": true
+								},
+								{
+									"key": "maxFeatures",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name+D",
+									"description": "ascending sort (+D for descending)",
+									"disabled": true
+								},
+								{
+									"key": "propertyName",
+									"value": "name,geom,website",
+									"disabled": true
+								},
+								{
+									"key": "srsName",
+									"value": "EPSG:4326"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Capabilities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/geocourse/wms?service=WMS&version=1.0.0&request=GetCapabilities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"geocourse",
+								"wms"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WMS"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetCapabilities"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
